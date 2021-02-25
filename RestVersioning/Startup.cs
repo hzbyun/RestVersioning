@@ -56,9 +56,6 @@ namespace RestVersioning
                     // add a custom operation filter which sets default values
                     options.OperationFilter<SwaggerDefaultValues>();
 
-                    // To provide string formated enum for dropdown UI
-                    options.SchemaFilter<EnumSchemaFilter>();
-
                     // integrate xml comments
                     // Set the comments path for the Swagger JSON and UI.
                     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -87,6 +84,9 @@ namespace RestVersioning
                         }
                     });
                 });
+
+            // To provide string formated enum for dropdown UI
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

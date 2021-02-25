@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace RestVersioning.SwaggerUtils
 {
+    [Obsolete]
     public class EnumSchemaFilter : ISchemaFilter
     {
         public void Apply(OpenApiSchema model, SchemaFilterContext context)
